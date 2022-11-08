@@ -29,4 +29,4 @@ const characterData = {
     }
 }
 
-//export default characterData
+export default characterData

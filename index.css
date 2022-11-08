@@ -48,8 +48,8 @@ main {
 @media(min-width:550px) {
     .character-card {
         border: 0.2rem solid #000721;
-        height: 26rem;
-        width: 37vw;
+        height: 32rem;
+        width: 40vw;
     }
 }
 
