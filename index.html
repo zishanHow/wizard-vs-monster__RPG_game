@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizard vs Monster</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <!-- css link -->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <main>
+        <div id="hero">
+            <div class="character-card">
+                <h4 class="name"> Wizard </h4>
+                <img class="avatar" src="images/wizard.png" />
+                <div class="health">health: <b> 60 </b></div>
+
+                <div class="health-bar-outer">
+                    <div class="health-bar-inner ${percent < 26 ? " danger" : "" }" style="width: 50%;">
+                    </div>
+                </div>
+
+                <div class="dice-container">
+                    <div class="placeholder-dice">
+                        <div class="dice">6</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="monster">
+            <div class="character-card">
+                <h4 class="name"> Monster </h4>
+                <img class="avatar" src="images/orc.png" />
+                <div class="health">health: <b> 40 </b></div>
+
+                <div class="health-bar-outer">
+                    <div class="health-bar-inner ${percent < 26 ? " danger" : "" }" style="width: 100%;">
+                    </div>
+                </div>
+
+                <div class="dice-container">
+                    <div class="placeholder-dice">
+                        <div class="dice">4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section id="actions">
+        <button id="attack-button">Attack</button>
+    </section>
+
+</body>
+
+</html>
