@@ -153,10 +153,10 @@ main {
    ================================= */
 .dice-container {
     width: 100%;
-    height: 20%;
+    /* height: 80px; */
     position: absolute;
     bottom: 0;
-    left: 0px;
+    left: 0;
     right: 0;
     background: #000721;
     display: flex;
@@ -165,24 +165,34 @@ main {
     gap: .5rem;
     border-bottom-left-radius: 14px;
     border-bottom-right-radius: 14px;
+    /* border: 2px solid red; */
 }
 
 @media(min-width:550px) {
     .dice-container {
-        height: 30%;
+        min-height: 6em;
         border-bottom-left-radius: 3px;
         border-bottom-right-radius: 3px;
     }
+}
+
+img{
+    width: 100%;
+}
+
+.placeholder-dice{
+    display: flex;
+    /* border: 1px solid #666; */
 }
 
 .dice,
 .placeholder-dice {
     height: 5.5vh;
     width: 5.5vh;
-    background: #fff;
+    /* background: #fff; */
     border-radius: 4px;
-    border: 1px solid #666;
-    color: #000721;
+    /* border: 1px solid #666; */
+    color: white;  /* #000721 */
     text-align: center;
     line-height: 6vh;
 }
@@ -191,9 +201,9 @@ main {
 
     .dice-container .dice,
     .dice-container .placeholder-dice {
-        height: 10vh;
-        width: 10vh;
-        line-height: 10.5vh;
+        height: 50%;
+        width: 70px;
+        /* line-height: 10.5vh; */
     }
 }
 
