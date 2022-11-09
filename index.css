@@ -180,6 +180,7 @@ img{
     width: 100%;
 }
 
+
 .placeholder-dice,
 .dice{
     display: flex;
@@ -212,6 +213,9 @@ img{
 
 .dice-container .placeholder-dice {
     background-color: transparent;
+}
+.dice-container .placeholder-dice{
+    border: 1px solid #666;
 }
 
 /* ===============
