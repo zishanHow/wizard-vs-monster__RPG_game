@@ -180,8 +180,11 @@ img{
     width: 100%;
 }
 
-.placeholder-dice{
+.placeholder-dice,
+.dice{
     display: flex;
+    align-items: center;
+    justify-content: center;
     /* border: 1px solid #666; */
 }
 
@@ -201,7 +204,7 @@ img{
 
     .dice-container .dice,
     .dice-container .placeholder-dice {
-        height: 50%;
+        height: 70px;
         width: 70px;
         /* line-height: 10.5vh; */
     }
