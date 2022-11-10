@@ -219,8 +219,22 @@ img{
 }
 
 /* ===============
-       Button
+       Score 
    =============== */
+.score{
+    font-size: 1.5rem;
+    color: #963404;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+.score span {
+    font-size: 2rem;
+    color: #fcc02a;
+}
+
+/* ===============
+       Button
+   =============== */  
 button {
     margin-top: .5rem;
     font-family: 'MedievalSharp', cursive;
@@ -252,6 +266,32 @@ button:focus {
 
 
 /* End message */
+.endImg {
+    width: 200px;
+    box-shadow: inset 0px 0px 6px 2px rgba(100, 100, 100, 0.2),
+        0px 0px 10px rgba(117, 182, 214, 0.2);
+    margin-bottom: 2em;
+}
+.end-health{
+    font-size: 2rem;
+    padding: .2em;
+    color: #fcc02a;
+}
+.end-p{
+    padding-bottom: 1em;
+}
+
+.end-character{
+    color: #963404;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-decoration: underline overline;
+    text-transform: uppercase;
+}
+
+
+
 .end-game {
     margin-top: 25%;
     text-align: center;

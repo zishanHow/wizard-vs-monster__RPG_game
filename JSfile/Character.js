@@ -17,12 +17,18 @@ class Character {
         this.diceHtml = this.currentDiceScore.map((num) => 
             `<img class="dice" src="diceImg/dice${num}.png" alt="Your dice number ${num}">`
         ).join('')
+
+
+
+        this.currentPoints = this.currentDiceScore.reduce((total, currentPoint) => 
+            total + currentPoint)
     }
 
     takeDamage(attackScoreArray){
         // reduce() Method total(+) the array of dice score, later minus(-) health from totalScore.
         const totalAttackScore = attackScoreArray.reduce((total, currentNum) =>
             total + currentNum)
+
         this.health -= totalAttackScore
         if(this.health <= 0){
             this.dead = true
@@ -45,15 +51,17 @@ class Character {
 
     getCharacterHtml(){
         // Object destructuring form 'this' to const. 
-        const { name, avatar, health, diceCount, diceHtml } = this
+        const { name, avatar, health, diceCount, diceHtml, currentPoints } = this
 
         const healthBar = this.getHealthBarHtml()
+
         return `
             <div class="character-card">
                 <h4 class="name"> ${name} </h4>
                 <img class="avatar" src="${avatar}" />
                 <div class="health">health: <b> ${health} </b></div>
                 ${healthBar}
+                <p class="score">Score: <span>${!currentPoints ? "" : currentPoints}</span></p>
                 <div class="dice-container">
                     ${diceHtml}
                 </div>

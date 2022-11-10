@@ -26,6 +26,10 @@ const characterData = {
         health: 20,
         diceCount: 3,
         currentDiceScore: []
+    },
+    allCharacter: {
+        monsterAvater: "images/monster.png",
+        CharactersAvater: "images/characters.png"
     }
 }
 
