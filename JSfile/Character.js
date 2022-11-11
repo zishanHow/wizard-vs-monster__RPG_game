@@ -15,7 +15,7 @@ class Character {
         // store diceRoll to this object(empty array we create in data.js) and then map ing it over. [in order to control damage(takeDamage: method)]
         this.currentDiceScore = getDiceRollArray(this.diceCount)
         this.diceHtml = this.currentDiceScore.map((num) => 
-            `<img class="dice" src="diceImg/dice${num}.png" alt="Your dice number ${num}">`
+            `<img class="dice" src="diceImg/dice${num}.png" alt="Score ${num}">`
         ).join('')
 
 

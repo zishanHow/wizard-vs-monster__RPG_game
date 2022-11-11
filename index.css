@@ -11,17 +11,22 @@ body {
     font-family: 'MedievalSharp', cursive;
 }
 
+img {
+    width: 100%;
+}
+
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: .5rem;
+    margin: 1em .5em;
+    gap: .1em;
 }
 
 @media(min-width:550px) {
     main {
         flex-direction: row;
-        margin: 5vh 5vh;
+        margin: 1.5em .5em;
         justify-content: center;
         width: 86vw;
         gap: 2rem;
@@ -29,11 +34,11 @@ main {
 }
 
 .character-card {
-    height: 14rem;
+    height: 18rem;
     margin-top: .5rem;
     width: 94vw;
     max-width: 230px;
-    padding: 1vh 1vw;
+    padding: .1em .5em;
     font-size: 1.6rem;
     color: white;
     position: relative;
@@ -65,8 +70,9 @@ main {
 
 @media(min-width:550px) {
     .name {
-        margin: .6em 0;
-        font-size: 100%;
+        margin: .5em 0;
+        font-size: 2rem;
+        letter-spacing: 3px;
     }
 }
 
@@ -74,19 +80,17 @@ main {
      Avater   
    ========== */
 .avatar {
-    width: 15vh;
-    min-width: 60px;
+    max-width: 110px;
+    width: 100%;
     border: 2px solid #000721;
-    max-width: 100%;
-    opacity: 0.8;
     border-radius: 10px;
+    opacity: 0.8;
     background-color: rgba(0, 7, 33, 0.8);
 }
 
 @media(min-width:550px) {
     .avatar {
-        width: 25vh;
-        min-width: 110px;
+        max-width: 150px;
     }
 }
 
@@ -98,21 +102,23 @@ main {
     font-weight: normal;
     width: 90%;
     text-align: left;
-    margin: 1vh 5%;
+    margin: 0 5%;
+    margin-bottom: .1em;
     color: #ccc;
     letter-spacing: 0.03em
 }
 
 @media(min-width:550px) {
     .health {
-        font-size: 1.3rem;
-        margin: 2vh 5%;
+        font-size: 1.5rem;
+        margin: .5em 5% .2em 5%;
     }
 }
 
 .health b {
-    font-weight: bold;
+    font-weight: 900;
     color: #fff;
+    letter-spacing: 2px;
 }
 
 /* =====================
@@ -120,22 +126,24 @@ main {
    ===================== */
 .health-bar-outer {
     background: #171217;
+    max-height: .4em;
     height: 1vh;
-    min-height: 3px;
+    min-height: 4px;
     width: 90%;
     margin: 0 5%;
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
 .health-bar-outer .health-bar-inner {
     background: #466d34;
     height: 100%;
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
 @media(min-width:550px) {
     .health-bar-outer {
         height: 2vh;
+        min-height: 8px;
         border-radius: 4px;
     }
 
@@ -148,12 +156,41 @@ main {
     background: #d1435f;
 }
 
+/* ===============
+       Score 
+   =============== */
+.score {
+    margin-top: .2em;
+    font-size: 1rem;
+    color: #963404;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin: 0;
+    margin-top: .1em;
+}
+
+.score span {
+    font-size: 1.5rem;
+    color: #fcc02a;
+}
+
+@media (min-width: 550px) {
+    .score {
+        font-size: 1.5rem;
+        margin-top: .5em;
+    }
+
+    .score span {
+        font-size: 2rem;
+    }
+}
+
 /* =================================
             Dice container
    ================================= */
 .dice-container {
     width: 100%;
-    /* height: 80px; */
+    min-height: 60px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -162,10 +199,9 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: .5rem;
+    gap: 1.5rem;
     border-bottom-left-radius: 14px;
     border-bottom-right-radius: 14px;
-    /* border: 2px solid red; */
 }
 
 @media(min-width:550px) {
@@ -173,32 +209,19 @@ main {
         min-height: 6em;
         border-bottom-left-radius: 3px;
         border-bottom-right-radius: 3px;
+        gap: .5rem;
     }
-}
-
-img{
-    width: 100%;
-}
-
-
-.placeholder-dice,
-.dice{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* border: 1px solid #666; */
 }
 
 .dice,
 .placeholder-dice {
-    height: 5.5vh;
-    width: 5.5vh;
-    /* background: #fff; */
+    width: 2em;
+    height: 2em;
     border-radius: 4px;
-    /* border: 1px solid #666; */
-    color: white;  /* #000721 */
+
+    /* this line of code if image doesn't showed up */
+    color: white;
     text-align: center;
-    line-height: 6vh;
 }
 
 @media(min-width:550px) {
@@ -207,92 +230,71 @@ img{
     .dice-container .placeholder-dice {
         height: 70px;
         width: 70px;
-        /* line-height: 10.5vh; */
     }
 }
 
 .dice-container .placeholder-dice {
     background-color: transparent;
 }
-.dice-container .placeholder-dice{
+
+/* this is for when player haven't start playing */
+.dice-container .placeholder-dice {
     border: 1px solid #666;
 }
 
 /* ===============
-       Score 
-   =============== */
-.score{
-    font-size: 1.5rem;
-    color: #963404;
-    font-weight: 900;
-    letter-spacing: 1px;
-}
-.score span {
-    font-size: 2rem;
-    color: #fcc02a;
-}
-
-/* ===============
        Button
-   =============== */  
-/* .actions{
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-    align-items: flex-start;
-} */
-
+   =============== */
 button {
-    margin-top: .5rem;
-    font-family: cursive, 'MedievalSharp';
+    margin: .5rem 0;
+    font-size: 1.5rem;
+    font-family: 'MedievalSharp', cursive;
+    font-weight: 900;
+    letter-spacing: 2px;
     color: #963404;
     background-color: #fcc02a;
     border: 2px solid #963404;
+    border-radius: 6px;
     outline: none;
-    padding: .5em 1.5em;
+    padding: .4em 1.4em;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 1.5rem;
-    border-radius: 6px;
     cursor: pointer;
     box-shadow: 0px 6px 10px -4px rgba(0, 0, 0, 0.4);
 }
 
-#play-again-btn{
+#play-again-btn {
     background-color: #963404;
     color: #fcc02a;
     border: 2px solid #fcc02a;
 }
 
-/* @media(min-width:550px) {
-    button {
-        margin-top: ;
-    }
-} */
-
 button:focus {
     outline: 0
 }
 
+/* ====================
+       End message
+   ==================== */
 
-/* End message */
+.end-game {
+    margin-top: 15vh;
+    width: 100%;
+    text-align: center;
+}
+
 .endImg {
-    width: 200px;
+    width: 250px;
     box-shadow: inset 0px 0px 6px 2px rgba(100, 100, 100, 0.2),
         0px 0px 10px rgba(117, 182, 214, 0.2);
-    margin-bottom: 2em;
 }
-.end-health{
-    font-size: 2rem;
-    padding: .2em;
-    color: #fcc02a;
-}
-.end-p{
+
+.end-p {
     padding-bottom: 1em;
 }
 
-.end-character{
+.end-character {
     color: #963404;
     font-size: 1.5rem;
     font-weight: 900;
@@ -301,13 +303,8 @@ button:focus {
     text-transform: uppercase;
 }
 
-
-
-.end-game {
-    margin-top: 25%;
-    text-align: center;
-}
-
-.end-emoji {
-    font-size: 80px;
+.remaing-health {
+    font-size: 2rem;
+    padding: .2em;
+    color: #fcc02a;
 }

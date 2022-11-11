@@ -55,13 +55,13 @@ function endGame() {
     const endMessage = wizard.health === 0 && monster.health === 0 ?
         `<p class="end-p">No victors - all 
             <span class="end-character"> creatures</span> are 
-            <span class="end-health"> "dead" </span></p>` :
+            <span class="remaing-health"> "dead" </span></p>` :
         wizard.health > 0 ? `
             <p class="end-p">The <span class="end-character">Wizard</span> 
-            wins by <span class="end-health">"${wizard.health}"</span> 
+            wins by <span class="remaing-health">"${wizard.health}"</span> 
             point's</p> ` :
             `   <p class="end-p">The <span class="end-character">Monsters</span> 
-            are Victorious by <span class="end-health">"${monster.health}"
+            are Victorious by <span class="remaing-health">"${monster.health}"
             </span> point's</p>`
 
     const endImg = wizard.health === 0 && monster.health === 0 ?
