@@ -114,7 +114,7 @@ function playAgaing() {
     setTimeout(() => window.location.reload(), 500)
 }
 
-// getting our hero(wizard) form Character class and setting it to a variable
+// getting our hero(wizard) form Character class and setting it to a variable  [{( it's an array constructor )}]
 const wizard = new Character(characterData.hero)
 
 // setting new monster to a variable, so that we can update the variable with next monster, in the attack function. 
