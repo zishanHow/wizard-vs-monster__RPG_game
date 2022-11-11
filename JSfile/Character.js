@@ -1,55 +1,60 @@
 //utlis
-import { getDicePlaceHolderHtml, getDiceRollArray, getPercentage} from '../JSfile/utlis.js'
+import { getDicePlaceHolderHtml, getDiceRollArray, getPercentage } from '../JSfile/utlis.js'
 
 // creating a CLASS for "blueprint" our data.js object 
 class Character {
-    constructor(data){
-        // takes all the data from 'data'(parameter) object and set it to the 'this' object
+    //every class must need constructor, for assing object and take control of it
+    constructor(data) {
+        // takes all the data from 'data'(through parameter) object and set it to the 'this' object
         Object.assign(this, data)
 
         this.maxHealth = this.health
         this.diceHtml = getDicePlaceHolderHtml(this.diceCount)
     }
 
-    setDiceHtml(diceCount){
-        // store diceRoll to this object(empty array we create in data.js) and then map ing it over. [in order to control damage(takeDamage: method)]
+    setDiceHtml() {
+        //store diceRoll to currentDiceScore object(empty array create in data.js) and then map ing it over. [in order to control damage(takeDamage: method),also]
         this.currentDiceScore = getDiceRollArray(this.diceCount)
-        this.diceHtml = this.currentDiceScore.map((num) => 
+
+        // here updating the diceHtml with new value
+        this.diceHtml = this.currentDiceScore.map((num) =>
             `<img class="dice" src="diceImg/dice${num}.png" alt="Score ${num}">`
         ).join('')
 
 
-
-        this.currentPoints = this.currentDiceScore.reduce((total, currentPoint) => 
+        // IDK, if this is the right way to do it. but this object returning the total(+) diceScore, which showing "Score:" to the DOM.
+        this.currentPoints = this.currentDiceScore.reduce((total, currentPoint) =>
             total + currentPoint)
     }
 
-    takeDamage(attackScoreArray){
-        // reduce() Method total(+) the array of dice score, later minus(-) health from totalScore.
+    //this parameter getting argument form index.js(i.e: monster.currentDiceScore) which is current diceScore.
+    takeDamage(attackScoreArray) {
+        //reduce() Method total(+) the array of dice score. then
         const totalAttackScore = attackScoreArray.reduce((total, currentNum) =>
             total + currentNum)
 
+        // minus the health from totalAttackScore value
         this.health -= totalAttackScore
-        if(this.health <= 0){
+        if (this.health <= 0) {
             this.dead = true
             this.health = 0
         }
     }
 
-    getHealthBarHtml(){
+    getHealthBarHtml() {
         //getting healthbar percentage from getPercentage() function, and implanting it according.
-        // use ternary operator for when to use danger class and use inline style for width. 
         const percent = getPercentage(this.health, this.maxHealth)
         return `
             <div class="health-bar-outer">
-                <div class="health-bar-inner ${percent <= 25 ? 'danger': ''}"
+                <div class="health-bar-inner ${percent <= 25 ? 'danger' : ''}"
                     style="width: ${percent}%;">
                 </div>
             </div>
         `
+        // use ternary operator for when to use "danger" class, and use inline style for "width", with the percentage we getting from health.
     }
 
-    getCharacterHtml(){
+    getCharacterHtml() {
         // Object destructuring form 'this' to const. 
         const { name, avatar, health, diceCount, diceHtml, currentPoints } = this
 

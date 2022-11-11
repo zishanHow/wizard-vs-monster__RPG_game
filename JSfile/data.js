@@ -1,3 +1,4 @@
+// setting all the necessary data our character need. 
 const characterData = {
     hero: {
         name: "Wizard",
@@ -9,7 +10,7 @@ const characterData = {
     orc: {
         name: "Orc",
         avatar: "images/orc.png",
-        health: 40,
+        health: 35,
         diceCount: 1,
         currentDiceScore: []
     },
@@ -27,6 +28,8 @@ const characterData = {
         diceCount: 3,
         currentDiceScore: []
     },
+
+    // i think i might delete it. if i find other way of doing it. for now here setting all the character and monster image in here
     allCharacter: {
         monsterAvater: "images/monster.png",
         CharactersAvater: "images/characters.png"
