@@ -65,7 +65,7 @@ function endGame() {
             <p class="end-p">The <span class="end-character">Wizard</span> 
             wins by <span class="remaing-health">"${wizard.health}"</span> 
             point's</p> ` :
-        `<p class="end-p">The <span class="end-character">Monsters</span> 
+            `<p class="end-p">The <span class="end-character">Monsters</span> 
             are Victorious by <span class="remaing-health">"${monster.health}"
             </span> point's</p>`
 
@@ -73,7 +73,7 @@ function endGame() {
     const endImg = wizard.health === 0 && monster.health === 0 ?
         characterData.allCharacter.CharactersAvater :
         wizard.health > 0 ? characterData.hero.avatar :
-        characterData.allCharacter.monsterAvater
+            characterData.allCharacter.monsterAvater
 
 
     setTimeout(() => {
@@ -110,7 +110,7 @@ function render() {
 
 // END play-againg-btn, which for now just refresh the page
 function playAgaing() {
-                       //refresh page js
+    //refresh page js
     setTimeout(() => window.location.reload(), 500)
 }
 

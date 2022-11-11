@@ -1,9 +1,11 @@
 # wizard-vs-monster__RPG_game
  Wizard and Monster's fight to win. 
-###### play the Game: https://zishanhow.github.io/wizard-vs-monster__RPG_game/
+**play the Game:** https://zishanhow.github.io/wizard-vs-monster__RPG_game/
 
 ## about me 
-Hi, my name is Zishan, currently i'm learling javaScript.
+Hi, my name is **Zishan**, currently i'm learling _javaScript_.
+
+
 
 ## what have i learn through this project?? 
 
